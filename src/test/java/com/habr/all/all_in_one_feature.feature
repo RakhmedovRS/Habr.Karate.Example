@@ -28,3 +28,26 @@ Feature: Фича с примерами простейщих тестов API
     Given path '/api/users/23'
     When method GET
     Then status 404
+
+  Scenario: Попытаемся залогинится и проверим успешность
+    Given path '/api/login'
+    And request
+    """
+    {
+      "email": "eve.holt@reqres.in",
+      "password": "cityslicka"
+    }
+    """
+    When method POST
+    Then status 200
+
+  Scenario: Попытаемся залогинится и проверим неуспешность
+    Given path '/api/login'
+    And request
+    """
+    {
+      "email": "peter@klaven"
+    }
+    """
+    When method POST
+    Then status 400
