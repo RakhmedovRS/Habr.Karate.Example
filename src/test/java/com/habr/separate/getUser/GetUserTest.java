@@ -1,4 +1,4 @@
-package com.habr;
+package com.habr.separate.getUser;
 
 import com.intuit.karate.Results;
 import com.intuit.karate.Runner;
@@ -11,8 +11,8 @@ import static org.junit.Assert.assertTrue;
  * @author RakhmedovRS
  * @created 11/19/2020
  */
-@CucumberOptions(features = "classpath:com/habr/test_api_example.feature")
-public class TestRunner
+@CucumberOptions(tags = {"~@ignore"}, features = {"classpath:com/habr/separate/getUser/get_user.feature"})
+public class GetUserTest
 {
 	@Test
 	public void run()
