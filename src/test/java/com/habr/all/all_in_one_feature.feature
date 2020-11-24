@@ -18,7 +18,7 @@ Feature: Фича с примерами простейщих тестов API
     {
 	  "last_name":"Weaver",
 	  "id":2,
-	  "avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",
+	  "avatar":"#ignore",
 	  "first_name":"Janet",
 	  "email":"janet.weaver@reqres.in"
 	}
@@ -47,6 +47,29 @@ Feature: Фича с примерами простейщих тестов API
     """
     {
       "email": "peter@klaven"
+    }
+    """
+    When method POST
+    Then status 400
+
+  Scenario: Проверим успешный сценарий регистрации пользователя
+    Given path '/api/register'
+    And request
+    """
+    {
+      "email": "eve.holt@reqres.in",
+      "password": "pistol"
+    }
+    """
+    When method POST
+    Then status 200
+
+  Scenario: Проверим регистрацию пользователя вызвав сервис с некорректными параметрами
+    Given path '/api/register'
+    And request
+    """
+    {
+      "email": "sydney@fife"
     }
     """
     When method POST
