@@ -13,7 +13,7 @@ Feature: Фича с примером отдельного сценария get 
     {
 	  "last_name":"Weaver",
 	  "id":2,
-	  "avatar":"https://s3.amazonaws.com/uifaces/faces/twitter/josephstein/128.jpg",
+	  "avatar":"#ignore",
 	  "first_name":"Janet",
 	  "email":"janet.weaver@reqres.in"
 	}
